@@ -15,6 +15,16 @@ export class PeopleService {
 
   constructor() { }
 
+  addPerson(persona:Person) : void {
+  		people.push(persona);
+  }
+
+  getLasId() : Promise<number> {
+  		return new Promise<number>( (resolve, reject)=>{
+  			resolve(people[people.length-1].id);
+  		} )
+  }
+
   getPeople() : Promise<Person[]>{
   		return new Promise<Person[]>( (resolve, reject)=>{
   			resolve(people);
