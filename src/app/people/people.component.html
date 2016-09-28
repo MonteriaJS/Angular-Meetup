@@ -1,1 +1,5 @@
-<h1>componente people</h1>
+<h1>{{ person.id }} {{person.name}}</h1>
+
+<ul>
+	<li *ngFor = " let person of people " > {{ person.is }} {{ person.name }} </li>
+</ul>
