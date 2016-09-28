@@ -1,14 +1,15 @@
-<h1>{{ person.id }} {{person.name}}</h1>
-
-<ul *ngFor = " let person of people ">
-	<li>
-		<a [class.selected]="selectedPerson===person" (click)="selected(person)">  {{ person.id }} {{ person.name }} </a>
-	</li>
-</ul>
+<div class="container">
+	<h3>lista de personas</h3>
+	<ul *ngFor = " let person of people ">
+		<li>
+			<a [class.selected]="selectedPerson===person" (click)="selected(person)">  {{ person.id }} {{ person.name }} </a>
+		</li>
+	</ul>
 
 	<h4> Add New Person </h4>
 	<input [(ngModel)]="newPerson.name" type="text">
-	<button (click)="addPerson(newPerson)" >Add</button>
+	<button class="btn" (click)="addPerson(newPerson)" >Add</button>
+</div>
 
 <!-- <div *ngIf="selectedPerson">
 	<h4> {{ selectedPerson.name | uppercase }} details! </h4>
