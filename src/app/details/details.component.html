@@ -1,0 +1,6 @@
+<div *ngIf="person" class=container>
+	<h4> {{ person.name | uppercase }} details! </h4>
+	<label> id: {{ person.id }}</label>
+	<input [(ngModel)]="person.name" type="text">
+	<button class="btn" routerLink="/people">back</button>
+</div>

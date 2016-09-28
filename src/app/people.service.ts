@@ -25,6 +25,15 @@ export class PeopleService {
   		} )
   }
 
+  getPerson(id: number) : Promise<Person> {
+    return new Promise<Person>( (resolve, reject)=>{
+      this.getPeople()
+        .then( (array) => {
+           resolve( array.find( person => person.id === id ) )
+        } )
+    } )
+  }
+
   getPeople() : Promise<Person[]>{
   		return new Promise<Person[]>( (resolve, reject)=>{
   			resolve(people);

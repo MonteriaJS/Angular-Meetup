@@ -8,12 +8,14 @@ import { routers } from './routers'
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component';
 import { HomeComponent } from './home/home.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

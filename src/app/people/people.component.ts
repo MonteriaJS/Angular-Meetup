@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../person';
-import { PeopleService } from '../people.service'
+import { PeopleService } from '../people.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -16,7 +17,7 @@ export class PeopleComponent implements OnInit {
 	selectedPerson : Person;
 	newPerson : Person = new Person(0, '');
 
-	constructor( private peopleService: PeopleService ) { }
+	constructor( private peopleService: PeopleService, private router:Router ) { }
 
 	ngOnInit() {
 		this.peopleService.getPeople()
@@ -33,8 +34,9 @@ export class PeopleComponent implements OnInit {
 			} )
 	}
 
-	selected(person: Person) : void {
-		this.selectedPerson = person;
+	getPerson(person: Person) : void {
+		let link = ['/people', person.id]
+		this.router.navigate(link);
 	}
 
 }
